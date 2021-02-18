@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
-import 'package:logger/logger.dart';
+import 'package:cli_util/cli_logging.dart';
 
 enum RPS {
   rock,
@@ -22,10 +22,22 @@ enum Result {
   nah
 }
 
-void main() {
-  var logger = Logger();
-  logger.d("Logger is working!");
+void main() async {
+  Logger logger = Logger.verbose();
 
+  logger.stdout('Hello world!');
+  logger.trace('message 1');
+  await new Future.delayed(new Duration(milliseconds: 200));
+  logger.trace('message 2');
+  logger.trace('message 3');
+
+  Progress progress = logger.progress('doing some work');
+  await new Future.delayed(new Duration(seconds: 2));
+  progress.finish(showTiming: true);
+
+  logger.stdout('All ${logger.ansi.emphasized('done')}.');
+  //TODO: end game when user has 10 points
+  // A very important change
   int computerPoints = 0;
   int playerPoints = 0;
   while (computerPoints < 10 && playerPoints < 10) {

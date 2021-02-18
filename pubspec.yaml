@@ -1,4 +1,4 @@
 name: enter
 dependencies:
-  logger: ^0.9.4
   path: ^1.7.0
+  cli_util: ^0.2.0

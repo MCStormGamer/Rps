@@ -1,0 +1,9 @@
+{
+  "dart.lineLength": 140,
+  "dart.maxLogLineLength": 140,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code"
+  }
+  //"editor.codeActionsOnSave": null
+}

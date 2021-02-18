@@ -22,6 +22,7 @@ enum Result {
 
 void main() {
   //TODO: end game when user has 10 points
+  // A very important change
   int computerPoints = 0;
   int playerPoints = 0;
   while (computerPoints < 10 || playerPoints < 10) {
@@ -33,8 +34,7 @@ void main() {
     stdout.write('Rock, paper, scissors - which will it be? (r/p/s) ');
     input = stdin.readLineSync();
     print('input is $input');
-    if (input != 'r' || input != 'p' || input != 's')
-      print('Please use one of the given options!');
+    if (input != 'r' || input != 'p' || input != 's') print('Please use one of the given options!');
     stdout.write('Rock, paper, scissors - which will it be? (r/p/s) ');
     if (input == 'r') {
       myChoice = RPS.rock;

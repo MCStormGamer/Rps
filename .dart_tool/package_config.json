@@ -2,10 +2,10 @@
   "configVersion": 2,
   "packages": [
     {
-      "name": "logger",
-      "rootUri": "file:///Users/igor/.pub-cache/hosted/pub.dartlang.org/logger-0.9.4",
+      "name": "cli_util",
+      "rootUri": "file:///Users/igor/.pub-cache/hosted/pub.dartlang.org/cli_util-0.2.0",
       "packageUri": "lib/",
-      "languageVersion": "2.2"
+      "languageVersion": "2.0"
     },
     {
       "name": "path",
@@ -20,7 +20,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-02-18T17:39:33.089120Z",
+  "generated": "2021-02-18T17:51:57.217868Z",
   "generator": "pub",
   "generatorVersion": "2.7.1"
 }

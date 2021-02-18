@@ -21,9 +21,10 @@ enum Result {
 }
 
 void main() {
+  //TODO: end game when user has 10 points
   int computerPoints = 0;
   int playerPoints = 0;
-  while (true) {
+  while (computerPoints < 10 || playerPoints < 10) {
     RPS myChoice;
     RPS computersChoice;
     String input;
@@ -143,4 +144,3 @@ RPS getUsersChoice(String choice) {
 
   return usersChoice;
 }
-//slovenska kosilnica

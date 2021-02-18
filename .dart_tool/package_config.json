@@ -1,0 +1,25 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "logger",
+      "rootUri": "file:///C:/Users/Uporabnik/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/logger-0.9.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "path",
+      "rootUri": "file:///C:/Users/Uporabnik/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/path-1.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "enter",
+      "rootUri": "../",
+      "packageUri": "lib/"
+    }
+  ],
+  "generated": "2021-02-18T17:41:59.766119Z",
+  "generator": "pub",
+  "generatorVersion": "2.10.4"
+}

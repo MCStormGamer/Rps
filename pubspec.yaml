@@ -1,0 +1,4 @@
+name: enter
+dependencies:
+  logger: ^0.9.4
+  path: ^1.7.0

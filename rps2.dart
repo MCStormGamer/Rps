@@ -22,10 +22,9 @@ enum Result {
 
 void main() {
   //TODO: end game when user has 10 points
-  // A very important change
   int computerPoints = 0;
   int playerPoints = 0;
-  while (computerPoints < 10 || playerPoints < 10) {
+  while (computerPoints < 10 && playerPoints < 10) {
     RPS myChoice;
     RPS computersChoice;
     String input;

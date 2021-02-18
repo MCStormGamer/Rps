@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'dart:math';
 
+import 'package:logger/logger.dart';
+
 enum RPS {
   rock,
   paper,
@@ -21,7 +23,9 @@ enum Result {
 }
 
 void main() {
-  //TODO: end game when user has 10 points
+  var logger = Logger();
+  logger.d("Logger is working!");
+
   int computerPoints = 0;
   int playerPoints = 0;
   while (computerPoints < 10 && playerPoints < 10) {

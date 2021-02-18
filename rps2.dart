@@ -25,7 +25,7 @@ void main() {
   // A very important change
   int computerPoints = 0;
   int playerPoints = 0;
-  while (computerPoints < 10 || playerPoints < 10) {
+  while (computerPoints < 10 && playerPoints < 10) {
     RPS myChoice;
     RPS computersChoice;
     String input;

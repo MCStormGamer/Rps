@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
-import 'package:cli_util/cli_logging.dart';
+// import 'package:cli_util/cli_logging.dart';
 
 enum RPS {
   rock,

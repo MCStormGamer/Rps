@@ -23,22 +23,20 @@ enum Result {
 }
 
 void main() async {
-  Logger logger = Logger.verbose();
+  // Logger logger = Logger.verbose();
 
-  logger.stdout('Hello world!');
-  logger.trace('message 1');
-  await new Future.delayed(new Duration(milliseconds: 200));
-  logger.trace('message 2');
-  logger.trace('message 3');
+  // logger.stdout('Hello world!');
+  // logger.trace('message 1');
+  // await new Future.delayed(new Duration(milliseconds: 200));
+  // logger.trace('message 2');
+  // logger.trace('message 3');
 
-  Progress progress = logger.progress('doing some work');
-  await new Future.delayed(new Duration(seconds: 2));
-  progress.finish(showTiming: true);
+  // Progress progress = logger.progress('doing some work');
+  // await new Future.delayed(new Duration(seconds: 2));
+  // progress.finish(showTiming: true);
 
-  logger.stdout('All ${logger.ansi.emphasized('done')}.');
-  //TODO: end game when user has 10 points
-  // A very important change
-  //aaaaa
+  // logger.stdout('All ${logger.ansi.emphasized('done')}.');
+
   int computerPoints = 0;
   int playerPoints = 0;
   while (computerPoints < 10 && playerPoints < 10) {

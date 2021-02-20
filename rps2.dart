@@ -62,17 +62,7 @@ void main() async {
     }
 
     computersChoice = getComputersChoice(randomInt);
-    // switch (randomInt) {
-    //   case 0:
-    //     computersChoice = RPS.rock;
-    //     break;
-    //   case 1:
-    //     computersChoice = RPS.paper;
-    //     break;
-    //   case 2:
-    //     computersChoice = RPS.scissors;
-    //     break;
-    // }
+
     if (myChoice == RPS.rock && computersChoice == RPS.rock) {
       print('You chose rock and computer chose rock. It\'s a draw.');
       result = Result.rockIrock;

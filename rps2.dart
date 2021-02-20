@@ -60,7 +60,7 @@ void main() async {
       myChoice = RPS.scissors;
     } else {
       myChoice = RPS.nah;
-      input = stdin.readLineSync(); //pusti ta line drugace ti skoci nasledni stavek na mesto za input
+      input = stdin.readLineSync(); //pusti ta line - nasledni stavek skoci na mesto za input
     }
 
     computersChoice = getComputersChoice(randomInt);

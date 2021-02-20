@@ -48,9 +48,10 @@ void main() async {
 
     stdout.write('Rock, paper, scissors - which will it be? (r/p/s) ');
     input = stdin.readLineSync();
-    print('input is $input');
-    if (input != 'r' || input != 'p' || input != 's') print('Please use one of the given options!');
-    stdout.write('Rock, paper, scissors - which will it be? (r/p/s) ');
+    if (input != 'r' && input != 'p' && input != 's') {
+      print('Please use one of the given options!');
+      stdout.write('Rock, paper, scissors - which will it be? (r/p/s) ');
+    }
     if (input == 'r') {
       myChoice = RPS.rock;
     } else if (input == 'p') {
@@ -59,7 +60,7 @@ void main() async {
       myChoice = RPS.scissors;
     } else {
       myChoice = RPS.nah;
-      input = stdin.readLineSync();
+      input = stdin.readLineSync(); //pusti ta line drugace ti skoci nasledni stavek na mesto za input
     }
 
     computersChoice = getComputersChoice(randomInt);
@@ -107,10 +108,13 @@ void main() async {
       result = Result.scissorsIpaper;
     }
     if (myChoice == RPS.nah) {
-      print('nope nope ');
       result = Result.nah;
+      print('Please use one of the given options!');
+      stdout.write('Rock, paper, scissors - which will it be? (r/p/s) ');
+      input = stdin.readLineSync();
     }
-    print(result);
+
+    //print(result);
     print('computers points : $computerPoints');
     print('players points : $playerPoints');
   }

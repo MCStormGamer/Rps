@@ -45,6 +45,7 @@ void main() async {
     String input;
     final int randomInt = Random().nextInt(3);
     Result result;
+
     stdout.write('Rock, paper, scissors - which will it be? (r/p/s) ');
     input = stdin.readLineSync();
     print('input is $input');

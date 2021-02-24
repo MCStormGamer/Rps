@@ -21,7 +21,7 @@ enum Result {
   scissorsIscissors,
   nah
 }
-
+// Rock, paper, scissors - which will it be? (r/p/s)
 void main() async {
   // Logger logger = Logger.verbose();
 
@@ -40,29 +40,32 @@ void main() async {
   int computerPoints = 0;
   int playerPoints = 0;
   while (computerPoints < 10 && playerPoints < 10) {
-    RPS myChoice;
+    RPS myChoice = RPS.nah;
     RPS computersChoice;
     String input;
     final int randomInt = Random().nextInt(3);
     Result result;
-
-    stdout.write('Rock, paper, scissors - which will it be? (r/p/s) ');
-    input = stdin.readLineSync();
-    if (input != 'r' && input != 'p' && input != 's') {
-      print('Please use one of the given options!');
-      stdout.write('Rock, paper, scissors - which will it be? (r/p/s) ');
+    while (myChoice == RPS.nah) {
+      stdout.write('banana ');
+      input = stdin.readLineSync();
+      if (input != 'r' && input != 'p' && input != 's') {
+        print('Please use one of the given options!');
+        stdout.write('if input ... ');
+        input = stdin.readLineSync();
+      }
+      if (input == 'r') {
+        myChoice = RPS.rock;
+      } else if (input == 'p') {
+        myChoice = RPS.paper;
+      } else if (input == 's') {
+        myChoice = RPS.scissors;
+      } else {
+        myChoice = RPS.nah;
+        print('Please use one of the given options!');
+        stdout.write('else... ');
+        input = stdin.readLineSync(); //pusti ta line - nasledni stavek skoci na mesto za input
+      }
     }
-    if (input == 'r') {
-      myChoice = RPS.rock;
-    } else if (input == 'p') {
-      myChoice = RPS.paper;
-    } else if (input == 's') {
-      myChoice = RPS.scissors;
-    } else {
-      myChoice = RPS.nah;
-      input = stdin.readLineSync(); //pusti ta line - nasledni stavek skoci na mesto za input
-    }
-
     computersChoice = getComputersChoice(randomInt);
 
     if (myChoice == RPS.rock && computersChoice == RPS.rock) {

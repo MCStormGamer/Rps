@@ -3,24 +3,23 @@
   "packages": [
     {
       "name": "cli_util",
-      "rootUri": "file:///Users/igor/.pub-cache/hosted/pub.dartlang.org/cli_util-0.2.0",
+      "rootUri": "file:///C:/Users/Uporabnik/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/cli_util-0.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
     {
       "name": "path",
-      "rootUri": "file:///Users/igor/.pub-cache/hosted/pub.dartlang.org/path-1.7.0",
+      "rootUri": "file:///C:/Users/Uporabnik/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/path-1.7.0",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
     {
       "name": "enter",
       "rootUri": "../",
-      "packageUri": "lib/",
-      "languageVersion": "2.7"
+      "packageUri": "lib/"
     }
   ],
-  "generated": "2021-02-18T17:51:57.217868Z",
+  "generated": "2021-02-24T08:09:57.431809Z",
   "generator": "pub",
-  "generatorVersion": "2.7.1"
+  "generatorVersion": "2.10.4"
 }

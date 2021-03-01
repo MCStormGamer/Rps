@@ -172,3 +172,4 @@ RPS getUsersChoice(String choice) {
 
   return usersChoice;
 }
+// test

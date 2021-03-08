@@ -2,6 +2,19 @@ import 'dart:io';
 import 'dart:math';
 
 // import 'package:cli_util/cli_logging.dart';
+// Logger logger = Logger.verbose();
+
+// logger.stdout('Hello world!');
+// logger.trace('message 1');
+// await new Future.delayed(new Duration(milliseconds: 200));
+// logger.trace('message 2');
+// logger.trace('message 3');
+
+// Progress progress = logger.progress('doing some work');
+// await new Future.delayed(new Duration(seconds: 2));
+// progress.finish(showTiming: true);
+
+// logger.stdout('All ${logger.ansi.emphasized('done')}.');
 
 enum RPS {
   rock,
@@ -21,37 +34,24 @@ enum Result {
   scissorsIscissors,
   nah
 }
-// Rock, paper, scissors - which will it be? (r/p/s)
 void main() async {
-  // Logger logger = Logger.verbose();
-
-  // logger.stdout('Hello world!');
-  // logger.trace('message 1');
-  // await new Future.delayed(new Duration(milliseconds: 200));
-  // logger.trace('message 2');
-  // logger.trace('message 3');
-
-  // Progress progress = logger.progress('doing some work');
-  // await new Future.delayed(new Duration(seconds: 2));
-  // progress.finish(showTiming: true);
-
-  // logger.stdout('All ${logger.ansi.emphasized('done')}.');
-
   int computerPoints = 0;
   int playerPoints = 0;
+  final String INPUT_PROMPT = 'Rock, paper, scissors - which will it be? (r/p/s) ';
+  final String WRONG_INPUT = 'Please use one of the given options!';
   while (computerPoints < 10 && playerPoints < 10) {
     RPS myChoice = RPS.nah;
     RPS computersChoice;
-    String? input;
+    String input;
     final int randomInt = Random().nextInt(3);
     Result result;
     while (myChoice == RPS.nah) {
-      stdout.write('Rock, paper, scissors - which will it be? (r/p/s) ');
-      input = stdin.readLineSync();
+      stdout.write(INPUT_PROMPT);
+      input = stdin.readLineSync() ?? '';
       if (input != 'r' && input != 'p' && input != 's') {
-        print('Please use one of the given options!');
-        stdout.write('Rock, paper, scissors - which will it be? (r/p/s) ');
-        input = stdin.readLineSync();
+        print(WRONG_INPUT);
+        stdout.write(INPUT_PROMPT);
+        input = stdin.readLineSync() ?? '';
       }
       if (input == 'r') {
         myChoice = RPS.rock;
@@ -61,9 +61,9 @@ void main() async {
         myChoice = RPS.scissors;
       } else {
         myChoice = RPS.nah;
-        print('Please use one of the given options!');
-        stdout.write('Rock, paper, scissors - which will it be? (r/p/s) ');
-        input = stdin.readLineSync();
+        print(WRONG_INPUT);
+        stdout.write(INPUT_PROMPT);
+        input = stdin.readLineSync() ?? '';
       }
     }
     computersChoice = getComputersChoice(randomInt);
@@ -130,9 +130,9 @@ void main() async {
     }
     if (myChoice == RPS.nah) {
       result = Result.nah;
-      print('Please use one of the given options!');
-      stdout.write('Rock, paper, scissors - which will it be? (r/p/s) ');
-      input = stdin.readLineSync();
+      print(WRONG_INPUT);
+      stdout.write(INPUT_PROMPT);
+      input = stdin.readLineSync() ?? '';
     }
 
     //print(result);
@@ -151,6 +151,8 @@ RPS getComputersChoice(int randomInt) {
     case 2:
       computersChoice = RPS.scissors;
       break;
+    default:
+      computersChoice = RPS.nah;
   }
 
   return computersChoice;
@@ -168,6 +170,8 @@ RPS getUsersChoice(String choice) {
     case 's':
       usersChoice = RPS.scissors;
       break;
+    default:
+      usersChoice = RPS.nah;
   }
 
   return usersChoice;

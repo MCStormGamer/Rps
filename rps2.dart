@@ -22,26 +22,25 @@ enum RPS {
   scissors,
   nah,
 }
+final String INPUT_PROMPT = 'Rock, paper, scissors - which will it be? (r/p/s) ';
+final String WRONG_INPUT = 'Please use one of the given options!';
 
 void main() async {
   int computerPoints = 0;
   int playerPoints = 0;
-  final String INPUT_PROMPT = 'Rock, paper, scissors - which will it be? (r/p/s) ';
-  final String WRONG_INPUT = 'Please use one of the given options!';
   while (computerPoints < 10 && playerPoints < 10) {
     RPS myChoice = RPS.nah;
     RPS computersChoice;
     String input;
     final int randomInt = Random().nextInt(3);
 
+    myChoice = getChoice();
+
     while (myChoice == RPS.nah) {
+      print(WRONG_INPUT);
       stdout.write(INPUT_PROMPT);
       input = stdin.readLineSync() ?? '';
-      if (input != 'r' && input != 'p' && input != 's') {
-        print(WRONG_INPUT);
-        stdout.write(INPUT_PROMPT);
-        input = stdin.readLineSync() ?? '';
-      }
+
       if (input == 'r') {
         myChoice = RPS.rock;
       } else if (input == 'p') {
@@ -50,9 +49,6 @@ void main() async {
         myChoice = RPS.scissors;
       } else {
         myChoice = RPS.nah;
-        print(WRONG_INPUT);
-        stdout.write(INPUT_PROMPT);
-        input = stdin.readLineSync() ?? '';
       }
     }
     computersChoice = getComputersChoice(randomInt);
@@ -148,4 +144,22 @@ RPS getUsersChoice(String choice) {
 void printPoints({required int computerPoints, required int playerPoints}) {
   print('computers points : $computerPoints');
   print('players points : $playerPoints');
+}
+
+RPS getChoice() {
+  String input;
+  RPS myChoice;
+  stdout.write(INPUT_PROMPT);
+  input = stdin.readLineSync() ?? '';
+
+  if (input == 'r') {
+    myChoice = RPS.rock;
+  } else if (input == 'p') {
+    myChoice = RPS.paper;
+  } else if (input == 's') {
+    myChoice = RPS.scissors;
+  } else {
+    myChoice = RPS.nah;
+  }
+  return myChoice;
 }

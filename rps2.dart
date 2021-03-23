@@ -32,7 +32,7 @@ void main() async {
     RPS myChoice = RPS.nah;
     RPS computersChoice;
     String input;
-    final int randomInt = Random().nextInt(3);
+    final int randomInt = Random().nextInt(3); //TODO:move this into getComputersChoice
 
     myChoice = getChoice();
 
@@ -55,51 +55,43 @@ void main() async {
 
     if (myChoice == RPS.rock && computersChoice == RPS.rock) {
       print('You chose rock and computer chose rock. It\'s a draw.');
-      printPoints(computerPoints: computerPoints, playerPoints: playerPoints);
     }
     if (myChoice == RPS.rock && computersChoice == RPS.paper) {
       print('You chose rock and computer chose paper. You lost.');
       computerPoints = computerPoints + 1;
-      printPoints(computerPoints: computerPoints, playerPoints: playerPoints);
     }
     if (myChoice == RPS.rock && computersChoice == RPS.scissors) {
       print('You chose rock and computer chose scissors. You won.');
       playerPoints = playerPoints + 1;
-      printPoints(computerPoints: computerPoints, playerPoints: playerPoints);
     }
     if (myChoice == RPS.paper && computersChoice == RPS.rock) {
       print('You chose paper and computer chose rock. You won.');
       playerPoints = playerPoints + 1;
-      printPoints(computerPoints: computerPoints, playerPoints: playerPoints);
     }
     if (myChoice == RPS.paper && computersChoice == RPS.paper) {
       print('You chose paper and computer chose paper. It\'s a draw.');
-      printPoints(computerPoints: computerPoints, playerPoints: playerPoints);
     }
     if (myChoice == RPS.paper && computersChoice == RPS.scissors) {
       print('You chose paper and computer chose scissors. You lost.');
       computerPoints = computerPoints + 1;
-      printPoints(computerPoints: computerPoints, playerPoints: playerPoints);
     }
     if (myChoice == RPS.scissors && computersChoice == RPS.rock) {
       print('You chose scissors and computer chose rock. You lost.');
       computerPoints = computerPoints + 1;
-      printPoints(computerPoints: computerPoints, playerPoints: playerPoints);
     }
     if (myChoice == RPS.scissors && computersChoice == RPS.paper) {
       print('You chose scissors and computer chose paper. You won.');
       playerPoints = playerPoints + 1;
-      printPoints(computerPoints: computerPoints, playerPoints: playerPoints);
     }
     if (myChoice == RPS.scissors && computersChoice == RPS.scissors) {
       print('You chose scissors and computer chose scissors. It\'s a draw.');
-      printPoints(computerPoints: computerPoints, playerPoints: playerPoints);
     }
     if (myChoice == RPS.nah) {
       print(WRONG_INPUT);
       stdout.write(INPUT_PROMPT);
       input = stdin.readLineSync() ?? '';
     }
+    printPoints(computerPoints: computerPoints, playerPoints: playerPoints);
   }
 }
 

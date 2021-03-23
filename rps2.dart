@@ -13,6 +13,11 @@ final String WRONG_INPUT = 'Please use one of the given options!';
 void main() async {
   int computerPoints = 0;
   int playerPoints = 0;
+  final String y = 'You chose';
+  final String x = 'and computer chose';
+  final String w = 'You won.';
+  final String l = 'You lost.';
+  final String d = 'It\'s a draw.';
   while (computerPoints < 10 && playerPoints < 10) {
     RPS myChoice = RPS.nah;
     RPS computersChoice;
@@ -39,37 +44,37 @@ void main() async {
     computersChoice = getComputersChoice(randomInt);
 
     if (myChoice == RPS.scissors && computersChoice == RPS.paper) {
-      print('You chose scissors and computer chose paper. You won.');
+      print('$y scissors $x paper. $w');
       playerPoints = playerPoints + 1;
     }
     if (myChoice == RPS.rock && computersChoice == RPS.scissors) {
-      print('You chose rock and computer chose scissors. You won.');
+      print('$y rock $x scissors. $w');
       playerPoints = playerPoints + 1;
     }
     if (myChoice == RPS.paper && computersChoice == RPS.rock) {
-      print('You chose paper and computer chose rock. You won.');
+      print('$y paper $x rock. $w');
       playerPoints = playerPoints + 1;
     }
     if (myChoice == RPS.rock && computersChoice == RPS.paper) {
-      print('You chose rock and computer chose paper. You lost.');
+      print('$y rock $x paper. $l');
       computerPoints = computerPoints + 1;
     }
     if (myChoice == RPS.paper && computersChoice == RPS.scissors) {
-      print('You chose paper and computer chose scissors. You lost.');
+      print('$y paper $x scissors. $l');
       computerPoints = computerPoints + 1;
     }
     if (myChoice == RPS.scissors && computersChoice == RPS.rock) {
-      print('You chose scissors and computer chose rock. You lost.');
+      print('$y scissors $x rock. $l');
       computerPoints = computerPoints + 1;
     }
     if (myChoice == RPS.rock && computersChoice == RPS.rock) {
-      print('You chose rock and computer chose rock. It\'s a draw.');
+      print('$y rock $x rock. ');
     }
     if (myChoice == RPS.paper && computersChoice == RPS.paper) {
-      print('You chose paper and computer chose paper. It\'s a draw.');
+      print('$y paper $x paper. $d');
     }
     if (myChoice == RPS.scissors && computersChoice == RPS.scissors) {
-      print('You chose scissors and computer chose scissors. It\'s a draw.');
+      print('$y scissors $x scissors. $d');
     }
     if (myChoice == RPS.nah) {
       print(WRONG_INPUT);

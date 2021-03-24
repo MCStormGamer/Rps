@@ -68,7 +68,7 @@ void main() async {
       computerPoints = computerPoints + 1;
     }
     if (myChoice == RPS.rock && computersChoice == RPS.rock) {
-      print('$y rock $x rock. ');
+      print('$y rock $x rock. $d');
     }
     if (myChoice == RPS.paper && computersChoice == RPS.paper) {
       print('$y paper $x paper. $d');
